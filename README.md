@@ -1,1 +1,0 @@
-## Fullstack Open Exercises for part 6
