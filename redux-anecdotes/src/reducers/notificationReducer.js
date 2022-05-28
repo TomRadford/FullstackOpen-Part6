@@ -4,7 +4,7 @@ const notficationSlide = createSlice({
     name: 'notification',
     initialState: null,
     reducers: {
-        setNotification(state, action) {
+        addNotification(state, action) {
             const message = action.payload
             return message
         },
@@ -12,8 +12,15 @@ const notficationSlide = createSlice({
            return null
         }
     }
-
 })
 
-export const {setNotification, removeNotification} = notficationSlide.actions
+export const {addNotification, removeNotification} = notficationSlide.actions
+export const setNotification = (message, seconds) => {
+    return dispatch => {
+        dispatch(addNotification(message))
+        setTimeout(() => {
+            dispatch(removeNotification())
+        } , seconds * 1000)
+    }
+}
 export default notficationSlide.reducer
