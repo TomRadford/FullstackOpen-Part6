@@ -3,8 +3,7 @@ import { voteAnecdote } from '../reducers/anecdoteReducer'
 import { setNotification } from '../reducers/notificationReducer'
 
 const AnecdoteList = () => {
-    const anecdotes = useSelector(({ filter, anecdotes }) => {
-        
+    const anecdotes = useSelector(({ filter, anecdotes }) => {      
         if (!filter) {
             return anecdotes
         } else {
@@ -18,7 +17,7 @@ const AnecdoteList = () => {
     const dispatch = useDispatch()
     const handleVote = (anecdote) => {
         dispatch(voteAnecdote(anecdote))
-        dispatch(setNotification(`You voted for '${anecdote.content}'`, 3))
+        dispatch(setNotification(`You voted for '${anecdote.content}'`, 5))
     }
     return (
         <div>

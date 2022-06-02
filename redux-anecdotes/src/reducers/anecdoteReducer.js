@@ -68,6 +68,7 @@ export const voteAnecdote = (anecdote) => {
   }
 }
 
+
 export default anecdoteSlice.reducer
 
 //EXERCISE WITHOUT REDUX TOOLKIT:
